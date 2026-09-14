@@ -16,8 +16,8 @@ function Dashboard() {
 
   const loadData = async () => {
     try {
-      const statsRes = await axios.get("http://localhost:5000/stats");
-      const appsRes = await axios.get("http://localhost:5000/applications");
+      const statsRes = await axios.get("https://internseek-backend-84rv.onrender.com/stats");
+      const appsRes = await axios.get("https://internseek-backend-84rv.onrender.com/applications");
 
       setStats(statsRes.data);
       setApps(appsRes.data);
@@ -36,7 +36,7 @@ function Dashboard() {
     }
 
     try {
-      await axios.post("http://localhost:5000/add", form);
+      await axios.post("https://internseek-backend-84rv.onrender.com/add", form);
 
       setForm({
         company: "",
@@ -53,7 +53,7 @@ function Dashboard() {
 
   const updateStatus = async (id, status) => {
     try {
-      await axios.put(`http://localhost:5000/update/${id}`, {
+      await axios.put(`https://internseek-backend-84rv.onrender.com/update/${id}`, {
         status,
       });
 
@@ -65,7 +65,7 @@ function Dashboard() {
 
   const deleteApp = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/delete/${id}`);
+      await axios.delete(`https://internseek-backend-84rv.onrender.com/delete/${id}`);
       await loadData();
     } catch (error) {
       console.error("Failed to delete application:", error);

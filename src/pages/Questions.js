@@ -44,7 +44,7 @@ const [savedResume] = useState(
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:5000/generate-questions",
+        "https://internseek-backend-84rv.onrender.com/generate-questions",
         {
           resumeText,
           role,

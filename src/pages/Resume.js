@@ -37,7 +37,7 @@ function Resume() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/upload-resume",
+        "https://internseek-backend-84rv.onrender.com/upload-resume",
         formData,
         {
           headers: {
@@ -84,7 +84,7 @@ function Resume() {
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:5000/analyze-resume",
+        "https://internseek-backend-84rv.onrender.com/analyze-resume",
         { resumeText }
       );
 
@@ -108,7 +108,7 @@ function Resume() {
       setLoading(true);
 
       const improveRes = await axios.post(
-        "http://localhost:5000/improve-resume",
+        "https://internseek-backend-84rv.onrender.com/improve-resume",
         {
           resumeText,
           atsAnalysis,
@@ -120,7 +120,7 @@ function Resume() {
       setResult(improvedText);
 
       const analysisRes = await axios.post(
-        "http://localhost:5000/analyze-resume",
+        "https://internseek-backend-84rv.onrender.com/analyze-resume",
         { resumeText: improvedText }
       );
 
